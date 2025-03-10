@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Редактирование студента</title>
+</head>
+<body>
+<h1>Редактирование студента</h1>
+<form action="#" th:action="@{'/students/update/' + ${student.id}}" method="post">
+    Имя:<br/>
+    <input type="text" name="firstName" th:value="${student.firstName}"/><br/><br/>
+    Фамилия:<br/>
+    <input type="text" name="lastName" th:value="${student.lastName}"/><br/><br/>
+    Возраст:<br/>
+    <input type="number" name="age" th:value="${student.age}"/><br/><br/>
+    Тема диплома:<br/>
+    <select name="diplomaTopic" th:selected="${student.diplomaTopic}">
+        <option value="Education Management System">Система управления обучением</option>
+        <option value="FaaSj">Система управления функциями</option>
+        <option value="e-shop">Электронный магазин</option>
+    </select><br/><br/>
+    <button type="submit">Обновить</button>
+</form>
+</body>
+</html>
